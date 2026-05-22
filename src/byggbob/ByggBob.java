@@ -20,7 +20,7 @@ public class ByggBob {
         int spelarplats = 0;
         int spelarplats2 = 0;
         //Den här while loopen gör så att spelet går tills någon har nått plats 100/slutet
-       while(spelarplats<100)
+       while(spelarplats<=100 && spelarplats2<=100)
        {
            int tärning1= (int)(Math.random()*6+1);
            System.out.println("Nu är det spelare 1 tur");
@@ -49,16 +49,44 @@ public class ByggBob {
           
            }
             
-           if(spelarplats==16)
+           if(spelarplats==16) //Det här är en händelse som är ett quiz
            {
-               spelarplats++;
-               System.out.println("Du går fram ett steg");
+               System.out.println("Spelare 1, vad är viktigast för oss människor,");
+               System.out.println("1, Vatten");
+               System.out.println("2, Läsk");
+               System.out.println("3, Öl");
+               int svar = 1;
+               int gissning =input.nextInt();
+               input.nextLine();
+               if(gissning != svar)
+               {
+                   System.out.println("Det är fel, det rätta svaret 1");
+                   spelarplats = spelarplats - 10;
+               }
+               else
+               {
+                   System.out.println("Bra jobbat, svaret är rätt");
+               }
            }
            
            if(spelarplats2==16)
            {
-               spelarplats2++;
-               System.out.println("Du går fram ett steg");
+               System.out.println("Spelare 2, vad är viktigast för oss människor,");
+               System.out.println("1, Vatten");
+               System.out.println("2, Läsk");
+               System.out.println("3, Öl");
+               int svar2 = 1;
+               int gissning2 =input.nextInt();
+               input.nextLine();
+               if(gissning2 != svar2)
+               {
+                   System.out.println("Det är fel, det rätta svaret 1");
+                   spelarplats2 = spelarplats2 - 10;
+               }
+               else
+               {
+                   System.out.println("Bra jobbat, svaret är rätt");
+               }
            }
            
            if(spelarplats==30)
@@ -85,16 +113,41 @@ public class ByggBob {
                System.out.println("Oj då, det verkar som du hamnat fel. Du går tillbaka tio steg, du är nu på ruta 40");
            }
            
-           if(spelarplats==67)
+           if(spelarplats==67)// Det här en till händelse fast en ekvation
            {
-               spelarplats = spelarplats + 2;
-               System.out.println("Yippe, du går fram 2 steg, du är nu på ruta 69");
+           System.out.println("Spelare 1, x + 12 = 10, vad är x");
+                    int svar3 = -2;
+                    int gissning3 = input.nextInt();
+                    input.nextLine();
+                    if (gissning3 != svar3)
+                    {
+                        System.out.println("Det är fel, svaret är -2");
+                        spelarplats = spelarplats - 10;
+                    }
+                    else
+                    {
+                        System.out.println("Bra jobbat");
+                        spelarplats = spelarplats + 10;
+                    {
+           }
            }
            
             if(spelarplats2==67)
            {
-               spelarplats2 = spelarplats2 + 2;
-               System.out.println("Yippe, du går fram 2 steg, du är nu på ruta 69");
+              System.out.println("Spelare 1, x + 12 = 10, vad är x");
+                    int svar4 = -2;
+                    int gissning4 = input.nextInt();
+                    input.nextLine();
+                    if (gissning4 != svar4)
+                    {
+                        System.out.println("Det är fel, svaret är -2");
+                        spelarplats2 = spelarplats2 - 10;
+                    }
+                    else
+                    {
+                        System.out.println("Bra jobbat");
+                        spelarplats2 = spelarplats2 + 10;
+                    {
            }
            
            if(spelarplats==85)
@@ -122,9 +175,31 @@ public class ByggBob {
            }
        }
        
-       
-        System.out.println(spelarplats);
-        System.out.println(spelarplats2);
+           }
+       }
     }
-    
+       if (spelarplats<=100)
+       {
+           System.out.println("Grattis spelare 2, du vann");
+       }
+       if (spelarplats2<=100)
+       {
+           System.out.println("Grattis spelare 1, du vann");
+       }
+       if (spelarplats>=100 && spelarplats2>=100)
+       {
+           System.out.println("Det blir oavgjort");
+           
+           
+       }
+        System.out.println("Spelare 1, " + spelarplats);
+        System.out.println("Spelare 2, " + spelarplats2);
+    }
 }
+
+
+
+      
+    
+    
+
